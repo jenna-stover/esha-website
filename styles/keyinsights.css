@@ -1,0 +1,316 @@
+@font-face {
+    font-family: 'Modern';
+    src: url('../fonts/Modern.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'Modern-Bold';
+    src: url('../fonts/Modern-Bold.otf') format('opentype');
+}
+
+html, body {
+    overflow-x: hidden;
+    height: 100%;
+}
+
+body {
+    background: #b9ccda;
+    padding: 0;
+    margin: 0;
+    font-family: sans-serif;
+}
+
+.main {
+    margin: 0 auto;
+    display: block;
+    height: 100%;
+    margin-top: 60px;
+}
+
+.header {
+    width: 230px;
+    height: 60px;
+    background-color: #b9ccda;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    transform: translateX(-230px);
+    transition: transform 230ms ease-in-out;
+}
+
+#side-bar-menu, .sidebar-icon-toggle, .main {
+    position: relative;
+    z-index: 2;
+}
+
+#side-bar-menu {
+    height: 100%;
+    position: fixed;
+    left: 0;
+    width: 230px;
+    margin-top: 60px;
+    transform: translateX(-230px);
+    transition: transform 230ms ease-in-out;
+    background: linear-gradient(180deg, #b9ccda 0%, #78a4c3 100%);
+}
+
+.side-bar-menu-inner{
+    margin:0;
+    padding:0;
+}
+
+.side-bar-menu-inner li{
+    list-style: none;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: 20px;
+    cursor: pointer;
+    margin-top: 15px;
+}
+
+.side-bar-menu-inner li a{
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+input[type="checkbox"]:checked ~ .header {
+    transform: translateX(0);
+}
+
+input[type="checkbox"]:checked ~ #side-bar-menu {
+    transform: translateX(0);
+}
+
+input[type=checkbox] {
+    transition: all 0.3s;
+    box-sizing: border-box;
+    display: none;
+}
+
+.sidebar-icon-toggle {
+    transition: all 0.3s;
+    box-sizing: border-box;
+    cursor: pointer;
+    position: absolute;
+    z-index: 99;
+    height: 100%;
+    width: 100%;
+    top: 22px;
+    left: 15px;
+    margin-left: 15px;
+    height: 22px;
+    width: 22px;
+}
+
+.spinner {
+    transition: all 0.3s;
+    box-sizing: border-box;
+    position: absolute;
+    height: 3px;
+    width: 100%;
+    background-color: #fff;
+}
+
+.horizontal {
+    transition: all 0.3s;
+    box-sizing: border-box;
+    position: relative;
+    float: left;
+    margin-top: 3px;
+    box-shadow: 5px 0 10px #1e526578;
+}
+
+.diagonal.part-1 {
+    position: relative;
+    transition: all 0.3s;
+    box-sizing: border-box;
+    float: left;
+    box-shadow: 5px 0 10px #1e526578;
+}
+
+.diagonal.part-2 {
+    transition: all 0.3s;
+    box-sizing: border-box;
+    position: relative;
+    float: left;
+    margin-top: 3px;
+    box-shadow: 5px 0 10px #1e526578;
+}
+
+input[type=checkbox]:checked ~ .sidebar-icon-toggle > .horizontal {
+    transition: all 0.3s;
+    box-sizing: border-box;
+    opacity: 0;
+}
+
+input[type=checkbox]:checked ~ .sidebar-icon-toggle > .diagonal.part-1 {
+    transition: all 0.3s;
+    box-sizing: border-box;
+    transform: rotate(135deg);
+    margin-top: 8px;
+}
+
+input[type=checkbox]:checked ~ .sidebar-icon-toggle > .diagonal.part-2 {
+    transition: all 0.3s;
+    box-sizing: border-box;
+    transform: rotate(-135deg);
+    margin-top: -9px;
+}
+
+.tab {
+    font-family: 'Segoe UI', sans-serif;
+    margin-left: 15px;
+    font-size: 17px;
+    font-weight: 600;
+    color: #aaa;
+    letter-spacing: 1px;
+    text-decoration: none;
+    transition: 0.3s ease-in;
+}
+
+.tab:hover,
+.tab.active {
+    color: #1d5062;
+}
+
+/*key insights styles*/
+body * { place-self: center;}
+body {
+	margin: 0;
+    padding: 0;
+    font-family: 'Modern-Bold', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+}
+
+.title {
+    text-align: center;
+    padding-top: 100px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 60px;
+}
+
+.title h1 {
+    font-family: 'Modern-Bold';
+    font-size: 35px;
+    letter-spacing: 5px;
+    margin: 10px 0;
+    text-transform: uppercase;
+    color: #064358; 
+}
+
+.title h3 {
+    font-family: sans-serif;
+    font-weight: 600;
+    font-size: 12px;
+    letter-spacing: 8px;
+    text-transform: uppercase;
+    color: #135f78; 
+}
+
+.item{
+    position: relative;
+	box-shadow: 
+		inset var(--itemWidthMinus) var(--itemWidthMinus) 0 #23566C, 
+		inset var(--itemWidth) var(--itemWidthMinus) 0 #598299, 
+		inset var(--itemWidthMinus) var(--itemWidth) 0 #86ABC2,
+		inset var(--itemWidth) var(--itemWidth) 0 #97ebbf, 
+		0 0 20px silver,
+        0 10px 25px #1e526578;
+	transition: box-shadow ease-in-out .6s, color ease-in-out .5s;	
+	width: var(--itemWidth);
+	height: var(--itemWidth);
+	border-radius: 50%;
+	text-align: center;
+	background: center/50%  no-repeat;
+	cursor: pointer;
+	display: grid;
+    font-family: sans-serif;
+    font-weight: 600;
+    font-size: 12px;
+    letter-spacing: 8px;
+    text-transform: uppercase;
+	color: #bad0d9;
+	font-size: 30px;
+	grid-row:  2 / 3;
+}
+
+.item:hover{
+	box-shadow: 
+		inset 0 0 0 transparent, 
+		inset 0 0 0 transparent, 
+		inset 0 0 0 transparent, 
+		inset 0 0 0 transparent, 
+		0 0 40px #598299;
+	color: transparent;
+}
+
+.item p {
+    font-family: 'Modern-Bold';
+    font-weight: 1000;
+    color: #064358;
+    line-height: 1.3;
+    font-size: 27px;
+    white-space: normal;
+    text-transform: none;
+    letter-spacing: 0px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.4s ease 0.3s; 
+    position: absolute; 
+    width: 80%; 
+}
+
+.item:hover p {
+    opacity: 1;
+    visibility: visible;
+}
+
+.insights-grid {
+	--itemWidth: min(300px, 30vw);
+	--itemWidthMinus: calc(-1 * var(--itemWidth));
+	height: max-content;
+	width: max-content;
+	display: grid;
+	grid-template-rows: repeat(2, max-content);
+	grid-template-columns: repeat(3, calc(3vw + var(--itemWidth)));
+	font-family: 'Modern-Bold';
+}
+
+section a {
+    text-decoration: none;
+}
+
+.item > span {
+	width: 80%;
+	user-select: none; -moz-user-select: none; -webkit-user-select: none;
+}
+
+.fade-in {
+    animation: fadeIn 1s ease-in-out forwards;
+    opacity: 0;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+@media (max-width: 860px) {
+    .item p {
+        font-size: 18px;
+    }
+
+    html, body {
+        overflow-x: auto;
+    }
+}
